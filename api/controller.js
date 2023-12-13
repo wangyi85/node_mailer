@@ -6,6 +6,9 @@ exports.sendEmail = async (req, res) => {
 
     const transport = mailer.createTransport(smtpPool({
         service: 'Gmail',
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false,
         auth: {
             user: 'jackywang8911@gmail.com',
             pass: 'dongbangjk1989'
