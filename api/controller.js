@@ -4,9 +4,6 @@ exports.sendEmail = async (req, res) => {
     const {firstName, lastName, email, phoneNumber, qc} = req.body;
 
     const transport = mailer.createTransport({
-        host: 'smtp.forwardemail.net',
-        port: 465,
-        secure: true,
         service: 'gmail',
         auth: {
             user: 'jackywang8911@gmail.com',
