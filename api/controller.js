@@ -10,7 +10,7 @@ exports.sendEmail = async (req, res) => {
         service: 'gmail',
         auth: {
             user: 'jackywang8911@gmail.com',
-            pass: 'elegant0805'
+            pass: 'dongbangjk1989'
         },
         tls: {
             rejectUnauthorized: false
