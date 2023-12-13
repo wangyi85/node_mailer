@@ -1,9 +1,10 @@
 const mailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
 
 exports.sendEmail = async (req, res) => {
     const {firstName, lastName, email, phoneNumber, qc} = req.body;
 
-    const transport = mailer.createTransport({
+    const transport = mailer.createTransport(smtpTransport({
         service: 'gmail',
         auth: {
             user: 'jackywang8911@gmail.com',
@@ -12,7 +13,7 @@ exports.sendEmail = async (req, res) => {
         tls: {
             rejectUnauthorized: false
         }
-    })
+    }))
 
     const mailOptions = {
         from: email,
